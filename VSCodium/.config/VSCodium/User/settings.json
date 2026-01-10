@@ -1,5 +1,5 @@
 {
-    // Установить собственный шрифт и его размеры
+    // Установить шрифт и его размеры
     "editor.fontFamily": "BlexMono Nerd Font",
     "editor.fontSize": 17,
 
@@ -7,14 +7,14 @@
     "workbench.iconTheme": "catppuccin noctis icons",
     "workbench.tree.indent": 14,
 
-    // Установить тему по дефолту
+    // Установить цветовую тему
 	"workbench.colorTheme": "Monokai Dimmed",
 
     // Запрашивать подтверждение на удаление и Drag&Drop
     "explorer.confirmDragAndDrop": true,
     "explorer.confirmDelete": true,
 
-    // Настройка excalidraw по дефолту
+    // Настройка excalidraw
     "excalidraw.workspaceLibraryPath": ".",
     "excalidraw.theme": "dark",
     
@@ -34,7 +34,7 @@
     // По дефолту открывать пустую страницу
     "workbench.startupEditor": "none",
 
-    // Добавлять одну пустую строку в конец файла чтобы избежать ошибоки
+    // Добавлять одну пустую строку в конец файла
     "files.insertFinalNewline": true,
 
     // Отключаем окно с помощью для новичков
@@ -56,9 +56,6 @@
     "extensions.ignoreRecommendations": true,
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
     "security.workspace.trust.untrustedFiles": "open",
     "diffEditor.ignoreTrimWhitespace": true,
     "catppuccin-noctis-icons.hidesExplorerArrows": false,
