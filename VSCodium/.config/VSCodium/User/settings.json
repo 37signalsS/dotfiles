@@ -8,7 +8,7 @@
     "workbench.tree.indent": 14,
 
     // Установить тему по дефолту
-    "workbench.colorTheme": "Claude Dark",
+	"workbench.colorTheme": "Monokai Dimmed",
 
     // Запрашивать подтверждение на удаление и Drag&Drop
     "explorer.confirmDragAndDrop": true,
