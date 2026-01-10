@@ -1,0 +1,65 @@
+{
+    // Установить собственный шрифт и его размеры
+    "editor.fontFamily": "BlexMono Nerd Font",
+    "editor.fontSize": 17,
+
+    // Установить иконки и настроить их
+    "workbench.iconTheme": "catppuccin noctis icons",
+    "workbench.tree.indent": 14,
+
+    // Установить тему по дефолту
+    "workbench.colorTheme": "Claude Dark",
+
+    // Запрашивать подтверждение на удаление и Drag&Drop
+    "explorer.confirmDragAndDrop": true,
+    "explorer.confirmDelete": true,
+
+    // Настройка excalidraw по дефолту
+    "excalidraw.workspaceLibraryPath": ".",
+    "excalidraw.theme": "dark",
+    
+    // Убрать статус бар снизу
+    "workbench.statusBar.visible": false,
+
+    // Не показывать все открытые вкладки
+    "workbench.editor.showTabs": "single",
+
+    // Установить дефолтный размер для редактора
+    "window.zoomLevel": 1,
+    "editor.cursorBlinking": "solid",
+
+    // Настройка плагина todo
+    "todohighlight.isEnable": true,
+
+    // По дефолту открывать пустую страницу
+    "workbench.startupEditor": "none",
+
+    // Добавлять одну пустую строку в конец файла чтобы избежать ошибоки
+    "files.insertFinalNewline": true,
+
+    // Отключаем окно с помощью для новичков
+    "workbench.tips.enabled": false,
+
+    // Убирает вертикальные линии отступов в дереве файлов
+    "workbench.tree.renderIndentGuides": "none",
+
+    // Отключает подсветку активной строки
+    "editor.renderLineHighlight": "none",
+
+    // Автосохранение файлов через короткую паузу после редактирования
+    "files.autoSave": "afterDelay",
+
+    // Отключает автообновления VS Code / VSCodium
+    "update.mode": "none",
+
+    // Отключает всплывающие предложения установить расширения
+    "extensions.ignoreRecommendations": true,
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "catppuccin-noctis-icons.hidesExplorerArrows": false,
+}

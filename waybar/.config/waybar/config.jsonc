@@ -1,0 +1,158 @@
+{
+  "height": 35,
+  "width": 2200,
+  "spacing": 10,
+  "margin-top": 35,
+  "reload_style_on_change": true,
+  "output": "HDMI-A-1",
+
+  "modules-left": ["custom/menu", "custom/vpn"],
+  "modules-center": ["custom/pomodoro", "custom/bt_battery", "battery", "custom/notification", "custom/cpu", "custom/memory",  "custom/disk"],
+  "modules-right": ["tray", "pulseaudio", "custom/niri-layout", "clock", "custom/power"],
+
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M}",
+    "format-alt": " {:%H:%M:%S   %Y, %d %B, %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "locale": "ru_RU.UTF-8",
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "custom/menu": {
+    "format": "󰣇",
+    "on-click": "pkill wofi; wofi --show drun -x 40 -y 10 --height 500 --width 400 --hide-scroll",
+    "escape": true,
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "<span color='#cdd6f4'>{icon}</span> {volume}%",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+
+  "custom/niri-layout": {
+    "exec": "/home/q/.config/waybar/scripts/niri-layout.sh",
+    "interval": 1,
+    "format": "󰌌 {}",
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "⏻ ",
+    "on-click": "~/.config/wofi/power.sh",
+    "escape": true,
+    "tooltip": false
+  },
+
+  "custom/bt_battery": {
+    "exec": "/home/q/.config/waybar/scripts/bt.sh",
+    "interval": 1,
+    "format": "󰂯 {}%",
+    "tooltip": false
+  },
+
+  "custom/cpu": {
+    "exec": "/home/q/.config/waybar/scripts/cpu.sh",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": false
+  },
+
+  "custom/memory": {
+    "exec": "/home/q/.config/waybar/scripts/memory.sh",
+    "interval": 1,
+    "format": " {}",
+    "tooltip": false
+  },
+  
+  "custom/disk": {
+    "format": " {}",
+    "exec": "df -h / | awk 'NR==2{print $5}'",
+    "interval": 60
+  },
+  
+  "battery": {
+  	//"interval": 5,
+  	"align": 0,
+  	"rotate": 0,
+  	//"bat": "BAT1",
+  	//"adapter": "ACAD",
+  	"full-at": 100,
+  	"design-capacity": false,
+  	"states": {
+  		"good": 95,
+  		"warning": 30,
+  		"critical": 15
+  	},
+  	"format": "{icon} {capacity}%",
+  	"format-charging": " {capacity}%",
+  	"format-plugged": "󱘖 {capacity}%",
+  	"format-alt-click": "click",
+  	"format-full": "{icon} Full",
+  	"format-alt": "{icon} {time}",
+  	"format-icons": [
+  		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+  	],
+  	"format-time": "{H}h {M}min",
+  	"tooltip": true,
+  	"tooltip-format": "{timeTo} {power}w"
+  },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫 ",
+      "none": "󰂜 ",
+      "dnd-notification": "󰂠 ",
+      "dnd-none": "󰪓 ",
+      "inhibited-notification": "󰂛 ",
+      "inhibited-none": "󰪑 ",
+      "dnd-inhibited-notification": "󰂛 ",
+      "dnd-inhibited-none": "󰪑 "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/vpn": {
+    "exec": "/home/q/.config/waybar/scripts/vpn.sh",
+    "interval": 10,
+    "format": "{}",
+    "tooltip": false
+  },
+  "custom/pomodoro": {
+    "exec": "~/.config/waybar/scripts/pomodoro.sh",
+    "interval": 1,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/scripts/pomodoro.sh toggle",
+    "on-click-right": "~/.config/waybar/scripts/pomodoro.sh reset",
+    "escape": true,
+    "tooltip": true
+  }
+}

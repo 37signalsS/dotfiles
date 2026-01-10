@@ -1,0 +1,270 @@
+/* ===============================
+   Catppuccin Mocha Palette
+   =============================== */
+
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+
+@define-color base #1e1e2e;
+@define-color crust #11111b;
+
+
+/* ===============================
+   swaync color mapping
+   =============================== */
+
+@define-color cc-bg @base;
+@define-color noti-border-color @crust;
+@define-color noti-bg rgba(49, 50, 68, 0.8);
+@define-color noti-bg-opaque @surface0;
+@define-color noti-bg-hover @surface2;
+@define-color noti-bg-focus rgba(108, 112, 134, 0.6);
+
+@define-color noti-close-bg @overlay1;
+@define-color noti-close-bg-hover rgba(243, 139, 168, 0.8);
+
+@define-color text-color @text;
+@define-color text-color-disabled @subtext0;
+@define-color bg-selected @blue;
+
+
+/* ===============================
+   Notifications
+   =============================== */
+
+.notification-row {
+  outline: none;
+}
+
+.notification-row:hover {
+  background: transparent;
+}
+
+.notification-row .notification-background {
+  padding: 6px 12px;
+}
+
+/* Close button */
+.notification-row .close-button {
+  background: @noti-close-bg;
+  color: @text-color;
+  border-radius: 100%;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.notification-row .close-button:hover {
+  background: @noti-close-bg-hover;
+}
+
+/* Notification card */
+.notification {
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  border-radius: 12px;
+  transition: background 0.15s ease-in-out;
+}
+
+/* Actions */
+.notification-action,
+.notification-default-action {
+  background: transparent;
+  border: none;
+  color: @text-color;
+}
+
+.notification-action:hover,
+.notification-default-action:hover {
+  background: @noti-bg-hover;
+}
+
+.notification-default-action {
+  border-radius: 12px;
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Content */
+.notification-content {
+  padding: 4px;
+}
+
+.notification-content .image {
+  border-radius: 100px;
+  margin: 4px;
+}
+
+.notification-content .app-icon {
+  margin: 6px;
+  -gtk-icon-shadow: 0 1px 4px @crust;
+}
+
+.notification-content .summary,
+.notification-content .time {
+  font-size: 16px;
+  font-weight: bold;
+  color: @text-color;
+}
+
+.notification-content .time {
+  margin-right: 30px;
+}
+
+.notification-content .body {
+  font-size: 15px;
+  color: @text-color;
+}
+
+/* ===============================
+   Notification groups
+   =============================== */
+
+.notification-group {
+  background: @noti-bg-opaque;
+  border-radius: 15px;
+}
+
+.notification-group.collapsed .notification-row:not(:last-child)
+.notification-action,
+.notification-group.collapsed .notification-row:not(:last-child)
+.notification-default-action {
+  opacity: 0;
+}
+
+.notification-group.collapsed:hover .notification {
+  background: @noti-bg-hover;
+}
+
+
+/* ===============================
+   Control Center
+   =============================== */
+
+.control-center {
+  background: @cc-bg;
+  color: @text-color;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.blank-window,
+.floating-notifications {
+  background: transparent;
+}
+
+
+/* ===============================
+   Widgets
+   =============================== */
+
+/* Title */
+.widget-title {
+  margin: 8px;
+  font-size: 1.1rem;
+  color: @text-color;
+}
+
+.widget-title > button {
+  font-size: 0.9rem;
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  border-radius: 12px;
+}
+
+.widget-title > button:hover {
+  background: @noti-bg-hover;
+}
+
+/* DND */
+.widget-dnd {
+  margin: 4px 8px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd > switch {
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+  background: @bg-selected;
+}
+
+/* MPRIS */
+@define-color mpris-album-art-overlay rgba(147, 153, 178, 0.55);
+@define-color mpris-button-hover rgba(127, 132, 156, 0.5);
+
+.widget-mpris-player {
+  margin: 8px 8px;
+  padding: 12px;
+  background: @mpris-album-art-overlay;
+  border: 1px solid @surface1;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(17, 17, 27, 0.75);
+}
+
+.widget-mpris-player .widget-mpris-album-art {
+  border-radius: 100%;
+}
+
+.widget-mpris-player > box > button {
+  border-radius: 100%;
+  border: none;
+  background: transparent;
+}
+
+.widget-mpris-player > box > button:hover {
+  background: @mpris-button-hover;
+}
+
+/* Volume */
+.widget-volume {
+  margin: 8px;
+  padding: 8px;
+  background: @noti-bg;
+  border-radius: 12px;
+}
+
+.widget-volume > box > button {
+  background: transparent;
+  border: none;
+}
+
+/* Backlight */
+.widget-backlight {
+  margin: 8px;
+  padding: 8px;
+  background: @noti-bg;
+  border-radius: 12px;
+}
