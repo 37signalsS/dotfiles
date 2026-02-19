@@ -13,32 +13,33 @@ git clone https://github.com/37signalsS/niri.git
 ### Пакеты Pacman
 
 ```
-sudo pacman -S gammastep swaybg swayidle satty cliphist xorg-xwayland wl-clipboard nwg-look slurp swaylock slurp grim waybar wofi xdg-user-dirs xdg-desktop-portal-wlr brightnessctl swaync telegram-desktop tmux libreoffice yazi haruna obs-studio gthumb htop bat ripgrep-all zoxide fzf fish wireguard-tools p7zip docker docker-compose polkit-gnome thefuck krita keepassxc libreoffice-still-ru virtualbox scrcpy android-tools eza git-delta atuin lazygit blueman syncthing yt-dlp fragments kdeconnect network-manager-applet nm-connection-editor trash-cli translate-shell flatpak zed linux-zen linux-zen-headers linux-lts linux-lts-headers wev telegram-desktop gvfs-mtp mtpfs
+sudo pacman -S gammastep swaybg swayidle satty cliphist xorg-xwayland wl-clipboard nwg-look slurp swaylock slurp grim waybar wofi xdg-user-dirs xdg-desktop-portal-wlr brightnessctl swaync telegram-desktop firefox tmux libreoffice yazi haruna obs-studio gthumb htop bat ripgrep-all zoxide fzf fish wireguard-tools p7zip docker docker-compose polkit-gnome thefuck krita keepassxc libreoffice-still-ru virtualbox scrcpy android-tools eza git-delta atuin lazygit blueman syncthing yt-dlp fragments kdeconnect network-manager-applet nm-connection-editor trash-cli translate-shell flatpak zed linux-zen linux-zen-headers linux-lts linux-lts-headers wev telegram-desktop gvfs-mtp mtpfs anki micro
 ```
 
 ### Пакеты из AUR
 
 ```
-yay -S onlyoffice-bin lens-bin lazydocker ttf-times-new-roman vscodium-bin ungoogled-chromium-bin archarchive phoenix-arch tuxedo-control-center-bin tuxedo-drivers-dkms yt6801-dkms fresh-editor-bin
+yay -S onlyoffice-bin lens-bin ttf-times-new-roman vscodium-bin google-chrome sourcegit archarchive phoenix-arch tuxedo-control-center-bin tuxedo-drivers-dkms yt6801-dkms fresh-editor-bin freetube opencode-bin
 ```
 
 ### Дополнительное программное обеспечение
 
 - [Chaotic-AUR](https://aur.chaotic.cx/docs)
 
-- [Anki](https://apps.ankiweb.net/)
-
 - [Warp Terminal](https://app.warp.dev/get_warp)
+
   ```
   sudo pacman -U ./<filename>.pkg.tar.zst
   ```
   
 - [WaveTerm](https://www.waveterm.dev/download)
+
   ```
   sudo pacman -U <filename>.pacman
   ```
   
-- FreeLens (через Flatpak)
+- FreeLens
+
   ```
   flatpak install flathub app.freelens.Freelens
   ```
@@ -48,10 +49,13 @@ yay -S onlyoffice-bin lens-bin lazydocker ttf-times-new-roman vscodium-bin ungoo
 ### Настройка терминала
 
 1. Установите Starship prompt:
+
    ```
    curl -sS https://starship.rs/install.sh | sh
    ```
+
 2. Установите Fish как оболочку по умолчанию:
+
    ```
    chsh -s /usr/bin/fish
    ```
@@ -71,14 +75,17 @@ sudo systemctl mask systemd-rfkill.service && sudo systemctl mask systemd-rfkill
 ```
 
 Настройте TLP:
+
 ```
 micro /etc/tlp.conf
 ```
 
 Создайте службу Powertop:
+
 ```
 micro /etc/systemd/system/powertop.service
 ```
+
 ```
 [Unit]
 Description=Powertop tunings
@@ -95,6 +102,7 @@ WantedBy=multi-user.target
 ```
 
 Включите службы:
+
 ```
 sudo systemctl enable --now tlp.service
 sudo systemctl enable --now powertop.service
@@ -117,11 +125,10 @@ sudo systemctl enable --now powertop.service
 
 ## Использование Stow
 
-Этот репозиторий использует [GNU Stow](https://www.gnu.org/software/stow/) для управления конфигурационными файлами (дотфайлами). Stow — это менеджер символических ссылок, который упрощает управление файлами конфигураций, создавая символические ссылки из этого репозитория в вашу домашнюю директорию.
-
-#### Установка (создание ссылок)
+Этот репозиторий использует [GNU Stow](https://www.gnu.org/software/stow/) для управления конфигурационными файлами (дотфайлами).
 
 Чтобы установить конфигурацию для одного пакета (например, `nvim`):
+
 ```bash
 # Переходит в директорию .dotfiles
 cd /home/q/.dotfiles 
@@ -129,36 +136,34 @@ cd /home/q/.dotfiles
 # Устанавливает пакет nvim
 stow nvim
 ```
+
 Эта команда создаст символическую ссылку: `/home/q/.dotfiles/nvim/.config/nvim/init.lua` -> `/home/q/.config/nvim/init.lua`.
 
 Чтобы установить несколько пакетов одновременно:
+
 ```bash
 stow fish kitty tmux
 ```
 
-#### Удаление ссылок
-
 Чтобы удалить символические ссылки для пакета:
+
 ```bash
 stow -D nvim
 ```
 
-#### Пробный запуск (Dry Run)
-
 Крайне полезно перед применением изменений посмотреть, что `stow` собирается сделать, без фактического создания или удаления ссылок. Это помогает избежать конфликтов.
+
 ```bash
 stow -n nvim
 ```
+
 Флаг `-n` означает "no action" (без действия).
 
-#### Переустановка (Restow)
-
 Если вы изменили что-то в структуре или ссылки оказались "сломаны", вы можете использовать флаг `-R` (restow), чтобы атомарно удалить старые ссылки и создать новые.
+
 ```bash
 stow -R nvim
 ```
-
-### Игнорирование файлов
 
 Файл `.stow-local-ignore` в корне репозитория содержит список файлов и каталогов, которые `stow` должен игнорировать. В данном случае он используется, чтобы `stow` не пытался управлять файлом `README.md` или самим репозиторием `.git`.
 
@@ -167,38 +172,43 @@ stow -R nvim
 Winapps позволяет запускать приложения Windows (например, Microsoft Office) из Linux без использования виртуальных машин, интегрируя их в вашу систему.
 
 ### Клонирование репозитория
-Клонируйте репозиторий Winapps:
+
 ```bash
 git clone https://github.com/winapps-org/winapps
 ```
 
 ### Установка зависимостей
-Установите необходимые пакеты Pacman:
+
 ```bash
 sudo pacman -Syu --needed -y curl dialog freerdp git iproute2 libnotify openbsd-netcat
 ```
 
 ### Запуск службы Docker
-Убедитесь, что служба Docker запущена:
+
 ```bash
 sudo systemctl start docker
 ```
 
 ### Редактирование compose.yaml
+
 Отредактируйте `compose.yaml` в соответствии с вашими предпочтениями. Например, вы можете указать путь к пользовательскому образу Windows (например, `/home/q/Win11_24H2_EnglishInternational_x64.iso:/custom.iso`) и настроить учетные данные пользователя, пароли и ресурсы контейнера.
 
 ### Запуск контейнера Docker Compose
-Запустите контейнер Docker Compose и получите к нему доступ через веб-браузер:
+
 ```bash
 docker compose --file compose.yaml up
 ```
+
 Подключитесь через браузер по ссылке: `http://127.0.0.1:8006/`
 
 ### Настройка Windows
+
 Установите и настройте все необходимые приложения в вашей виртуальной среде Windows (например, выполните очистку и настройку системы с помощью https://github.com/flick9000/winscript).
 
 ### Конфигурация Winapps.conf
+
 Создайте или отредактируйте файл `~/.config/winapps/winapps.conf` со следующим содержимым, настроив его под свои нужды:
+
 ```
 ##################################
 #   ФАЙЛ КОНФИГУРАЦИИ WINAPPS   #
@@ -348,13 +358,15 @@ HIDEF="off"
 ```
 
 ### Скопируйте compose.yaml и запустите Docker
-Скопируйте `compose.yaml` в каталог `.config/winapps` и запустите контейнер:
+
 ```bash
 cp compose.yaml ~/.config/winapps && docker compose --file ~/.config/winapps/compose.yaml start
 ```
 
 ### Интеграция Winapps
+
 Запустите скрипт для настройки интеграции Winapps в вашу систему и подтвердите все действия, нажав `Enter`:
+
 ```bash
 ./setup.sh
 ```
