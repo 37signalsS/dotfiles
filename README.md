@@ -67,6 +67,16 @@ yay -S onlyoffice-bin lens-bin ttf-times-new-roman vscodium-bin google-chrome so
 - `~/.local/share/applications`
 - `/usr/share/applications`
 
+### SwayNC
+
+Чтобы swaync не менял конфиг при обновлениях, создайте override-файл `~/.config/systemd/user/swaync.service.d/override.conf`:
+
+```ini
+[Service]
+ExecStart=
+ExecStart=/usr/bin/swaync -c %h/.config/swaync/config.jsonc
+```
+
 ## Энергосбережение
 
 ```
