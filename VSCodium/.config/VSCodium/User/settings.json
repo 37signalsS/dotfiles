@@ -1,0 +1,44 @@
+{
+    // Установить шрифт и его размеры
+    "editor.fontFamily": "BlexMono Nerd Font",
+    "editor.fontSize": 17,
+
+    // Установить цветовую тему
+	"workbench.colorTheme": "Maple Dark",
+
+    // Запрашивать подтверждение на удаление и Drag&Drop
+    "explorer.confirmDragAndDrop": true,
+    "explorer.confirmDelete": true,
+    
+    // Убрать статус бар снизу
+    "workbench.statusBar.visible": false,
+
+    // Не показывать все открытые вкладки
+    "workbench.editor.showTabs": "single",
+
+    // Установить дефолтный размер для редактора
+    "window.zoomLevel": 1,
+    "editor.cursorBlinking": "solid",
+
+    // По дефолту открывать пустую страницу
+    "workbench.startupEditor": "none",
+
+    // Добавлять одну пустую строку в конец файла
+    "files.insertFinalNewline": true,
+
+    // Отключаем окно с помощью для новичков
+    "workbench.tips.enabled": false,
+
+    // Автосохранение файлов через короткую паузу после редактирования
+    "files.autoSave": "afterDelay",
+
+    // Отключает автообновления VS Code / VSCodium
+    "update.mode": "none",
+
+    // Отключает всплывающие предложения установить расширения
+    "extensions.ignoreRecommendations": true,
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "prompt",
+    "diffEditor.ignoreTrimWhitespace": true
+}
