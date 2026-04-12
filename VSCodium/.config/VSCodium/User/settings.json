@@ -1,44 +1,64 @@
 {
-    // Установить шрифт и его размеры
-    "editor.fontFamily": "BlexMono Nerd Font",
-    "editor.fontSize": 17,
+    "editor.fontFamily": "BlexMono Nerd Font", // Шрифт редактора (Nerd Font = поддержка иконок и спецсимволов)
+    "editor.fontSize": 17, // Размер шрифта
+    "editor.cursorBlinking": "solid", // Курсор не мигает
 
-    // Установить цветовую тему
-	"workbench.colorTheme": "Maple Dark",
+    "files.autoSave": "afterDelay", // Автосохранение
+    "files.insertFinalNewline": true, // Новая строка в конце файла
+    "files.associations": {},
 
-    // Запрашивать подтверждение на удаление и Drag&Drop
-    "explorer.confirmDragAndDrop": true,
-    "explorer.confirmDelete": true,
-    
-    // Убрать статус бар снизу
-    "workbench.statusBar.visible": false,
+    "files.exclude": {
+        "/.DS_Store": true,
+        "/node_modules": true,
+        "/bower_components": true,
+        "/pycache": true,
+        "/.cache": true,
+        "/.idea": true,
+        "/.pytest_cache": true,
+        "/.mypy_cache": true,
+        "/.venv": true,
+        "/.coverage": true,
+        "/*.py[co]": true,
+        "/htmlcoverage": true,
+        "**/docs/build": true
+    },
 
-    // Не показывать все открытые вкладки
-    "workbench.editor.showTabs": "single",
+    "explorer.confirmDragAndDrop": true, // Подтверждение перемещения файлов
+    "explorer.confirmDelete": false, // Удаление без подтверждения
 
-    // Установить дефолтный размер для редактора
-    "window.zoomLevel": 1,
-    "editor.cursorBlinking": "solid",
+    "window.zoomLevel": 1, // Масштаб интерфейса
+    "window.newWindowDimensions": "maximized", // Окно на весь экран
 
-    // По дефолту открывать пустую страницу
-    "workbench.startupEditor": "none",
+    "workbench.startupEditor": "none", // Без стартового экрана
+    "workbench.statusBar.visible": false, // Скрыть статус-бар
+    "workbench.tips.enabled": false, // Отключить подсказки
 
-    // Добавлять одну пустую строку в конец файла
-    "files.insertFinalNewline": true,
+    "workbench.activityBar.location": "hidden", // Полностью скрывает левую панель (Explorer, Git, Extensions)
+    "workbench.sideBar.location": "right", // Перемещает боковую панель вправо
 
-    // Отключаем окно с помощью для новичков
-    "workbench.tips.enabled": false,
+    "workbench.editor.showIcons": false, // Убирает иконки файлов во вкладках (ещё больше минимализма)
+    "workbench.editor.labelFormat": "medium", // Формат имени файла
+    "workbench.editor.empty.hint": "hidden", // Скрыть подсказку пустого редактора
 
-    // Автосохранение файлов через короткую паузу после редактирования
-    "files.autoSave": "afterDelay",
+    "breadcrumbs.enabled": false, // Убирает верхнюю навигацию по пути файла (breadcrumbs)
 
-    // Отключает автообновления VS Code / VSCodium
-    "update.mode": "none",
+    "workbench.colorTheme": "Moegi Space", // Тема
 
-    // Отключает всплывающие предложения установить расширения
-    "extensions.ignoreRecommendations": true,
-    "git.enableSmartCommit": true,
-    "redhat.telemetry.enabled": false,
-    "security.workspace.trust.untrustedFiles": "prompt",
-    "diffEditor.ignoreTrimWhitespace": true
+    "workbench.editor.showTabs": "single", // Одна вкладка
+
+    "git.enableSmartCommit": true, // Commit без staging
+    "git.autofetch": false, // Не авто-fetch
+    "git.autorefresh": true, // Автообновление статуса
+
+    "update.mode": "none", // Отключить обновления
+    "extensions.ignoreRecommendations": true, // Игнорировать рекомендации
+
+    "redhat.telemetry.enabled": false, // Отключить телеметрию
+    "security.workspace.trust.untrustedFiles": "prompt", // Запрос доверия
+
+    "diffEditor.ignoreTrimWhitespace": true, // Игнорировать пробелы в diff
+
+    "editor.dragAndDrop": false, // Отключить drag & drop
+    "editor.minimap.enabled": false, // Отключить minimap
+    "editor.scrollBeyondLastLine": false // Без пустого пространства внизу
 }
