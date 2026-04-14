@@ -13,7 +13,7 @@ git clone https://github.com/37signalsS/dotfiles.git
 ### Пакеты Pacman
 
 ```
-sudo pacman -S gammastep swaybg swayidle satty cliphist xorg-xwayland wl-clipboard nwg-look swaylock slurp grim waybar wofi xdg-user-dirs xdg-desktop-portal-wlr brightnessctl swaync telegram-desktop firefox tmux libreoffice yazi haruna obs-studio gthumb htop bat ripgrep-all zoxide fzf fish wireguard-tools p7zip docker docker-compose polkit-gnome krita keepassxc libreoffice-still-ru virtualbox scrcpy android-tools eza git-delta atuin lazygit blueman syncthing yt-dlp fragments kdeconnect network-manager-applet nm-connection-editor trash-cli translate-shell flatpak zed linux-zen linux-zen-headers linux-lts linux-lts-headers wev gvfs-mtp mtpfs anki micro kitty
+sudo pacman -S gammastep swaybg swayidle satty cliphist xorg-xwayland wl-clipboard nwg-look swaylock slurp grim waybar wofi xdg-user-dirs xdg-desktop-portal-wlr brightnessctl swaync telegram-desktop firefox tmux libreoffice yazi haruna obs-studio gthumb htop bat ripgrep-all zoxide fzf fish wireguard-tools p7zip docker docker-compose polkit-gnome krita keepassxc libreoffice-still-ru virtualbox scrcpy android-tools eza git-delta atuin lazygit blueman syncthing yt-dlp fragments kdeconnect network-manager-applet nm-connection-editor trash-cli translate-shell flatpak zed linux-zen linux-zen-headers linux-lts linux-lts-headers wev gvfs-mtp mtpfs anki micro kitty virtualbox-host-dkms linux-cachyos-headers dkms
 ```
 
 ### Пакеты из AUR
